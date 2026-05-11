@@ -113,8 +113,10 @@ LIMIT 3 OFFSET 1;
 
 -- CAU 11
 SELECT a.assignment_id, e.emp_name, p.project_name
-FROM Assignment
-JOIN 
+FROM Assignment a
+JOIN Emloyees e ON a.emp_id = e.emp_id
+JOIN Projects p ON a.project_id = p.project_id
+WHERE hours_worked > 100;
 
 -- CAU 12
 SELECT d.dept_id, d.dept_name, e.emp_name
